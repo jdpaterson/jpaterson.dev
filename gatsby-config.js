@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    title: "someTitle"
+  },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
@@ -7,7 +10,6 @@ module.exports = {
         spaceId: "1g2icuusuqut",
       },
     },
-    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -18,7 +20,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
-    // "gatsby-plugin-manifest",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -38,5 +39,17 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: 'gatsby-plugin-apollo',
+      options: {
+        uri: 'https://example.com/graphql'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-theme-ui',
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+    }
   ],
 };
