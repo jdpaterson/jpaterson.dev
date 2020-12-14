@@ -1,14 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Layout } from '../../components'
 
 
 const BlogPage = ({ data}) => {
-  console.log(data)
   return (
-    <>
+    <Layout>
       Hello Blog:
       {/* { data.contentfulBlogPost.id} */}
-    </>
+    </Layout>
   )
 }
 
