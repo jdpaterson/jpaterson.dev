@@ -49,7 +49,10 @@ module.exports = {
       resolve: 'gatsby-plugin-theme-ui',
     },
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: 'gatsby-plugin-emotion',
+    },
+    {
+      resolve: 'gatsby-transformer-remark'
     }
   ],
 };
