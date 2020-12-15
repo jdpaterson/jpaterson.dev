@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "someTitle"
+    title: "J. Paterson Dev",
+    description: "A space for all my things",
+    author: "J.Paterson"
   },
   plugins: [
     {
@@ -53,6 +55,19 @@ module.exports = {
     },
     {
       resolve: 'gatsby-transformer-remark'
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `J. Paterson dev`,
+        short_name: `J. Paterson dev`,
+        start_url: `/`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-offline'
   ],
 };

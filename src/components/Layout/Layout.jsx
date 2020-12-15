@@ -17,6 +17,7 @@ const links = [
 export default function({ children }) {
   return (
     <Container>
+       <SEO title={'J. Paterson Dev'} description={'A place for all my thoughts'} />
       <Nav navLinks={links} />
       {children}
     </Container>
