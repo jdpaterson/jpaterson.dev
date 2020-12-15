@@ -1,18 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Box, Heading } from 'theme-ui'
 import { Layout } from "../components"
 
 export default function BlogPost({ data }) {
   const  {
-    body: { childMarkdownRemark },
+    body: { childMdx },
     title
   } = data.contentfulBlogPost
   return (
     <Layout>
       <Box>
         <Heading>{title}</Heading>
-        <div dangerouslySetInnerHTML={{ __html: childMarkdownRemark.html }} />
+        <MDXRenderer>{childMdx.body}</MDXRenderer>
       </Box>
     </Layout>
   )
@@ -25,8 +26,8 @@ export const query = graphql`
       description
       date
       body {
-        childMarkdownRemark {
-          html
+        childMdx {
+          body
         }
       }
     }
