@@ -6,7 +6,7 @@ import { Layout } from '../../components'
 
 const BlogPage = ({ data }) => {
   return (
-    <Layout>
+    <Layout heroImage={data.contentfulPage.heroImage.fluid}>
       <Heading>J. Paterson .dev</Heading>
       {
         data.allContentfulBlogPost.nodes.map((blog) => (
@@ -36,6 +36,13 @@ export const query = graphql`
         title
         description
         date
+      }
+    }
+    contentfulPage(slug: { eq: "home" }){
+      heroImage{
+        fluid {
+          src
+        }
       }
     }
   }

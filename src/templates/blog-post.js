@@ -7,10 +7,12 @@ import { Layout } from "../components"
 export default function BlogPost({ data }) {
   const  {
     body: { childMdx },
+    featuredImage,
     title
   } = data.contentfulBlogPost
+  console.log(data)
   return (
-    <Layout>
+    <Layout heroImage={featuredImage.fluid}>
       <Box>
         <Heading>{title}</Heading>
         <MDXRenderer>{childMdx.body}</MDXRenderer>
@@ -28,6 +30,11 @@ export const query = graphql`
       body {
         childMdx {
           body
+        }
+      }
+      featuredImage {
+        fluid {
+          src
         }
       }
     }

@@ -6,7 +6,10 @@ const Nav = ({ navLinks }) => {
     <Flex
       as="nav"
       sx={{
-        justifyContent: 'space-evenly'
+        backgroundColor: 'background',
+        justifyContent: 'space-evenly',
+        position: 'sticky',
+        top: [0]
       }}
     >
       {

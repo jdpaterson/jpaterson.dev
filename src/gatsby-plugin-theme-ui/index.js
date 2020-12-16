@@ -9,5 +9,11 @@ export default merge(deep, {
     container: {
       maxWidth: ['25em', '35em', '50em', '60em']
     }
+  },
+  styles: {
+    a: {
+      textDecoration: 'none'
+    }
   }
+
 })
