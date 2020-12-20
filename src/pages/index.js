@@ -1,33 +1,17 @@
 import * as React from "react"
 import { graphql } from 'gatsby'
-import { Box, Flex, Heading, Image, Link, Text } from 'theme-ui'
-import Layout from '../components/Layout'
+import { BlogCard, Layout } from '../components'
 
 // markup
 const IndexPage = ({ data }) => {
   return (
     <Layout heroImage={data.contentfulPage.heroImage.fluid}>
-      <Heading>J. Paterson .dev</Heading>
       {
         data.allContentfulBlogPost.nodes.map((blog) => {
           return (
-          <Link key={blog.slug} href={`/blog/${blog.slug}`} >
-            <Flex>
-              <Box
-                sx={{
-                  minHeight: [250],
-                  minWidth: [250]
-                }}
-              >
-                <Image src={blog.thumbnail.fixed.src} />
-              </Box>
-              <Box>
-                <Heading as="h2">{ blog.title }</Heading>
-                <Text>{ blog.description }</Text>
-              </Box>
-            </Flex>
-          </Link>
-        )})
+            <BlogCard key={blog.slug} blog={blog} />
+          )
+        })
       }
     </Layout>
   )

@@ -1,7 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Box, Heading } from 'theme-ui'
+import {
+  Box,
+  Container,
+  Divider,
+  Heading,
+  Image,
+  Link,
+  Text,
+  ThemeProvider,
+ } from 'theme-ui'
 import { Layout } from "../components"
 
 export default function BlogPost({ data }) {
@@ -10,7 +19,6 @@ export default function BlogPost({ data }) {
     featuredImage,
     title
   } = data.contentfulBlogPost
-  console.log(data)
   return (
     <Layout heroImage={featuredImage.fluid}>
       <Box>
@@ -33,7 +41,10 @@ export const query = graphql`
         }
       }
       featuredImage {
-        fluid {
+        fixed(
+          height: 200
+          resizingBehavior: CROP
+        ) {
           src
         }
       }
