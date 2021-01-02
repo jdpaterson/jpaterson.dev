@@ -1,16 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import {
-  Box,
-  Container,
-  Divider,
-  Heading,
-  Image,
-  Link,
-  Text,
-  ThemeProvider,
- } from 'theme-ui'
+ import {
+   Box,
+   Heading
+ } from 'rebass'
 import { Layout } from "../components"
 
 export default function BlogPost({ data }) {
@@ -20,7 +14,7 @@ export default function BlogPost({ data }) {
     title
   } = data.contentfulBlogPost
   return (
-    <Layout heroImage={featuredImage.fluid}>
+    <Layout heroImage={featuredImage.fixed}>
       <Box>
         <Heading>{title}</Heading>
         <MDXRenderer>{childMdx.body}</MDXRenderer>

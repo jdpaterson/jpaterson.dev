@@ -1,12 +1,6 @@
-import BlogCard from './BlogCard'
-import Hero from './Hero'
-import Layout from './Layout'
-import Nav from './Nav'
-import SEO from './SEO'
-export {
-  BlogCard,
-  Hero,
-  Layout,
-  Nav,
-  SEO
-}
+export { default as BlogCard } from './BlogCard'
+export { default as Container } from './Container'
+export { default as Hero } from './Hero'
+export { default as Layout } from './Layout'
+export { default as Nav } from './Nav'
+export { default as SEO } from './SEO'

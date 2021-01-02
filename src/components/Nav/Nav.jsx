@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex, NavLink, Select } from 'theme-ui'
 
-const Nav = ({ navLinks, setTheme, themes }) => {
+const Nav = ({ navLinks }) => {
   return (
     <Flex justifyContent="space-between">
       <Flex
@@ -21,15 +21,6 @@ const Nav = ({ navLinks, setTheme, themes }) => {
             </NavLink>
           ))
         }
-        <Select onChange={(e) => {
-          setTheme(themes[e.target.value])
-        }}>
-          {
-            Object.keys(themes).map((theme) => (
-              <option>{theme}</option>
-            ))
-          }
-        </Select>
       </Flex>
     </Flex>
   )

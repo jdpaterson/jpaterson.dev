@@ -1,11 +1,13 @@
 import * as React from "react"
 import { graphql } from 'gatsby'
+import { Heading } from 'rebass'
 import { BlogCard, Layout } from '../components'
 
 // markup
 const IndexPage = ({ data }) => {
   return (
     <Layout heroImage={data.contentfulPage.heroImage.fluid}>
+      <Heading as="h1">Blog Posts</Heading>
       {
         data.allContentfulBlogPost.nodes.map((blog) => {
           return (

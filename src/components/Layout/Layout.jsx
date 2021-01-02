@@ -1,28 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Box,
-  Container,
-  Divider,
   Heading,
   Image,
   Link,
   Text,
-  ThemeProvider,
- } from 'theme-ui'
-import { funk, bootstrap, tosh, swiss, deep } from '@theme-ui/presets'
+} from 'rebass'
+import {
+  Divider,
+  ThemeProvider
+} from 'theme-ui'
+import defaultTheme from '../../gatsby-plugin-theme-ui/index'
+import Container from '../Container'
 import Hero from '../Hero'
 import Nav from '../Nav'
 import SEO from '../SEO'
 
 export default function({ children, heroImage }) {
-  const [theme, setTheme] = useState(swiss)
-  const themes = {
-    "swiss": swiss,
-    "funk": funk,
-    "tosh": tosh,
-    "bootstrap": bootstrap,
-    "deep": deep
-  }
   const links = [
     {
       label: "Home",
@@ -47,13 +41,13 @@ export default function({ children, heroImage }) {
         a: props => <Link {...props} target="_blank" />,
         img: Image
       }}
-      theme={theme}
+      theme={defaultTheme}
     >
       <Box sx={{ bg: 'background' }}>
         <SEO title={'J. Paterson Dev'} description={'A place for all my thoughts'} />
-        <Nav navLinks={links} setTheme={setTheme} themes={themes} />
-        <Hero heroImage={heroImage} />
         <Container>
+        <Nav navLinks={links} />
+        { heroImage && (<Hero heroImage={heroImage} />)}
           {children}
         </Container>
       </Box>
