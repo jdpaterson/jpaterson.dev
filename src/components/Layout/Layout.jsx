@@ -8,6 +8,7 @@ import {
   Divider,
   ThemeProvider
 } from 'theme-ui'
+import Prism from '@theme-ui/prism'
 import defaultTheme from '../../gatsby-plugin-theme-ui/index'
 import Container from '../Container'
 import Heading from '../Heading'
@@ -39,7 +40,9 @@ export default function({ children, heroImage }) {
         h6: props => <Heading {...props} as="h6" />,
         hr: Divider,
         a: props => <Link {...props} target="_blank" />,
-        img: Image
+        img: Image,
+        pre: props => props.children,
+        code: Prism,
       }}
       theme={defaultTheme}
     >

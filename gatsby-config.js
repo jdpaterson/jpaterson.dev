@@ -1,3 +1,4 @@
+const remarkPrism = require("remark-prism")
 module.exports = {
   siteMetadata: {
     title: "J. Paterson Dev",
@@ -41,7 +42,29 @@ module.exports = {
       },
       __key: "pages",
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        remarkPlugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+              // inlineCodeMarker: null,
+              aliases: {},
+              // showLineNumbers: false,
+              // noInlineHighlight: false,
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: 'gatsby-plugin-apollo',
       options: {

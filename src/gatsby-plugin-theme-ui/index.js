@@ -1,3 +1,4 @@
+import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 export default {
   breakpoints: ['600px'],
   colors: {
@@ -77,6 +78,7 @@ export default {
     },
     link: {
       color: 'primary',
+      textDecoration: 'none',
       ':hover,:focus,.active': {
         color: 'secondary'
       }
@@ -118,6 +120,9 @@ export default {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body'
+    },
+    code: {
+      ...nightOwl,
     }
   }
 }
