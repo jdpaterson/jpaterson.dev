@@ -6,7 +6,7 @@ import { BlogCard, Layout } from '../components'
 // markup
 const IndexPage = ({ data }) => {
   return (
-    <Layout heroImage={data.contentfulPage.heroImage.fluid}>
+    <Layout>
       <Heading as="h1">Blog Posts</Heading>
       {
         data.allContentfulBlogPost.nodes.map((blog) => {

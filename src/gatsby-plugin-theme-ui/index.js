@@ -1,12 +1,14 @@
 export default {
+  breakpoints: ['600px'],
   colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#07c',
-    secondary: '#30c',
-    muted: '#f6f6f9',
-    gray: '#dddddf',
-    highlight: 'hsla(205, 100%, 40%, 0.125)'
+    text: 'hsl(210, 50%, 96%)',
+    background: 'hsl(230, 25%, 18%)',
+    primary: 'hsl(260, 100%, 80%)',
+    secondary: 'hsl(290, 100%, 80%)',
+    highlight: 'hsl(260, 20%, 40%)',
+    purple: 'hsl(290, 100%, 80%)',
+    muted: 'hsla(230, 20%, 0%, 20%)',
+    gray: 'hsl(210, 50%, 60%)',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -50,6 +52,16 @@ export default {
     caps: {
       textTransform: 'uppercase',
       letterSpacing: '0.1em'
+    },
+    h1: {
+      fontSize: 5,
+      margin: 2,
+      padding: 2,
+    },
+    h2: {
+      fontSize: 4,
+      margin: 2,
+      padding: 2
     }
   },
   variants: {
@@ -64,7 +76,10 @@ export default {
       boxShadow: 'card'
     },
     link: {
-      color: 'primary'
+      color: 'primary',
+      ':hover,:focus,.active': {
+        color: 'secondary'
+      }
     },
     nav: {
       fontSize: 1,

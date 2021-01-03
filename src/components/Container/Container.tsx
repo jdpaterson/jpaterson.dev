@@ -4,7 +4,7 @@ import { Box } from 'rebass'
 const Container = ({ children }) => (
   <Box
     sx={{
-      maxWidth: 512,
+      maxWidth: [1200],
       mx: 'auto',
       px: 3
     }}>

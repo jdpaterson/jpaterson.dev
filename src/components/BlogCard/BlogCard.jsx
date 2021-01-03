@@ -6,7 +6,7 @@ import {
   Image,
   Link,
   Text
-} from 'theme-ui'
+} from 'rebass'
 
 const BlogCard = ({ blog }) => {
   return (

@@ -1,10 +1,8 @@
 import React from 'react'
 import {
   Box,
-  Heading,
   Image,
   Link,
-  Text,
 } from 'rebass'
 import {
   Divider,
@@ -12,9 +10,11 @@ import {
 } from 'theme-ui'
 import defaultTheme from '../../gatsby-plugin-theme-ui/index'
 import Container from '../Container'
+import Heading from '../Heading'
 import Hero from '../Hero'
 import Nav from '../Nav'
 import SEO from '../SEO'
+import Text from '../Text'
 
 export default function({ children, heroImage }) {
   const links = [

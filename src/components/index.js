@@ -1,6 +1,8 @@
 export { default as BlogCard } from './BlogCard'
 export { default as Container } from './Container'
+export { default as Heading } from './Heading'
 export { default as Hero } from './Hero'
 export { default as Layout } from './Layout'
 export { default as Nav } from './Nav'
 export { default as SEO } from './SEO'
+export { default as Text } from './Text'

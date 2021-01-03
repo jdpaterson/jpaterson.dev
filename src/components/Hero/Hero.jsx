@@ -3,13 +3,9 @@ import { Box, Image } from 'theme-ui'
 
 const Hero = ({ heroImage }) => {
   return (
-    <Box sx={{ height: ['100px']}} >
+    <Box>
       <Image
         {...heroImage}
-        sx={{
-          height: ['100px'],
-          width: ['100%']
-        }}
       />
     </Box>
   )
